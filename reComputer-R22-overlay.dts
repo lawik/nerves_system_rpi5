@@ -102,13 +102,13 @@
 				
 				PSE_PG {
 					gpios = <&pca9535_1 0 0>;
-					output-high;
+					input;
 					line-name = "PSE_PG";
 				};
 				
 				PSE_INTB {
 					gpios = <&pca9535_1 1 0>;
-					output-high;
+					input;
 					line-name = "PSE_INTB";
 				};
 				
