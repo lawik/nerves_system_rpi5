@@ -75,11 +75,13 @@
 				
 				gpio-controller;
 				#gpio-cells = <2>;
-				interrupt-controller;
-				#interrupt-cells = <2>;
-
-				interrupt-parent = <&gpio>;
-				interrupts = <26 IRQ_TYPE_LEVEL_LOW>;
+				/* INT (GPIO26) intentionally not wired up: with the
+				 * PSE subsystem unpowered the status inputs oscillate
+				 * and the level IRQ storms until the kernel disables
+				 * it. Restore interrupt-controller/interrupts here
+				 * together with the gpio-pse-int node when the PSE is
+				 * brought up properly.
+				 */
 
 				gpio-line-names =
 				"PSE_PG",
