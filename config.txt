@@ -21,9 +21,13 @@ disable_splash=1
 # configuration. See Target packages->Hardware handling->Firmware.
 gpu_mem=192
 
-# Enable I2C and SPI
+# Enable I2C
 dtparam=i2c_arm=on
-dtparam=spi=on
+
+# SPI0 stays off: it claims GPIO9-11, and GPIO10/11 are i2c1 on the
+# reComputer R22xx, where the PCA9535 GPIO expanders live. The R22xx uses
+# spi2/spi3 (TPM, CAN) instead of SPI0.
+dtparam=spi=off
 
 # Enable audio (loads snd_bcm3825)
 dtparam=audio=on
