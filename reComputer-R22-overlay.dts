@@ -525,7 +525,14 @@
 		__overlay__ {
 			gpio_pse_int: gpio-pse-int {
 				compatible = "gpio-keys";
-				status = "okay";
+				/* Disabled: with PSE_PWR_EN held low (Seeed default,
+				 * see the pca9535_1 hog above) the PSE status lines
+				 * oscillate, storming the expander INT until the
+				 * kernel disables it. Re-enable if the PSE subsystem
+				 * is powered and serviced. Power-loss detection is
+				 * done by polling the SuperCAP UPS's LTC3350 instead.
+				 */
+				status = "disabled";
 				pse_intb: pse-intb {
 					label = "pse-intb";
 					linux,code = <116>;
