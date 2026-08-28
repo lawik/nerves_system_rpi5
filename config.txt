@@ -64,6 +64,12 @@ dtoverlay=dwc2
 # information across reboots in DRAM
 dtoverlay=ramoops
 
+# Seeed reComputer R22xx peripherals (GPIO expanders, LEDs, RTC, CAN, audio,
+# TPM, beeper). This branch targets the R22xx; comment these out for other
+# boards.
+dtoverlay=reComputer-R22-overlay
+dtoverlay=gpio-shutdown,gpio_pin=GPIO16,active_low=1
+
 # Enable the UART (/dev/ttyAMA0)
 enable_uart=1
 
