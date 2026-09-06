@@ -45,7 +45,7 @@ defmodule NervesSystemRpi5.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "#{@github_organization}/#{@app}"}
+        {:github_releases, "lawik/#{@app}"}
       ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
@@ -121,6 +121,7 @@ defmodule NervesSystemRpi5.MixProject do
       "post-build.sh",
       "post-createfs.sh",
       "ramoops-pi4-overlay.dts",
+      "reComputer-R22-overlay.dts",
       "README.md",
       "REUSE.toml",
       "VERSION"
